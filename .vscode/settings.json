@@ -67,39 +67,27 @@
             "language": "python",
             "template": [
                 "\"\"\"",
-                "File: <<file_path_relative>>",
-                "Project: <<gitprojectname>>",
+                "File: <<filerelativepath>>",
+                "Project: <<projectname>>",
                 "File Created: <<filecreated('dddd, Do MMMM YYYY h:mm:ss a')>>",
-                "Author: <<gitauthor>> (<<gitemail>>)",
+                "Author: <<author>> (<<authoremail>>)",
                 "-----",
                 "Last Modified: <<dateformat('dddd, Do MMMM YYYY h:mm:ss a')>>",
-                "Modified By: <<gitauthor>> (<<gitemail>>)",
+                "Modified By: <<author>> (<<authoremail>>)",
                 "-----",
-                "Copyright (c) - <<copyrightholder>> <<year>>",
+                "Copyright (c) <<yeartoyear(fc,now)>> <<copyrightholder>>",
                 "\"\"\""
             ]
         }
     ],
     "psi-header.variables": [
-        [
-            "gitauthor",
-            "git config user.name"
-        ],
-        [
-            "gitemail",
-            "git config user.email"
-        ],
-        [
-            "gitprojectname",
-            "basename `git rev-parse --show-toplevel`"
-        ],
-        [
-            "file_path_relative",
-            "realpath --relative-to=\"$(git rev-parse --show-toplevel)\" \"$FILE\""
-        ],
-        [
-            "copyrightholder",
-            "Creative Commons Attribution"
-        ]
-    ]
+        ["author", "Klaus"],
+        ["authoremail", "kbegnis23@gmail.com"],
+        ["copyrightholder", "Creative Commons Attribution"]
+    ],
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
 }
